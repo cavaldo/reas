@@ -2,8 +2,6 @@ import React from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
 import { Texts } from '../texts';
 
-// TODO
-
 interface StateType {
     res: string;
   }
@@ -20,10 +18,15 @@ function SuccessPage() {
     }
 
     return (
-      <div className="request-sent">
-        { state.res === 'success' ? <div>Success</div> : <div>Fail</div>}
+      <div className="request_sent">
+        { state.res === 'success' ? 
+            <div className="text">{Texts.success}</div> 
+        : 
+            <div className="text">{Texts.fail}</div>}
 
-        <button className="button_back" onClick={redirectToHome}>{Texts.backToHome}</button>
+        <div className="button_wrapper">
+            <button className="button_back" onClick={redirectToHome}>{Texts.backToHome}</button>
+        </div>
       </div>
     );
 }

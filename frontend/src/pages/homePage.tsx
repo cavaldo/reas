@@ -60,6 +60,7 @@ function HomePage() {
             })
             .catch(err => {
                 console.log(err.message);
+                
                 navigate("/sent", {
                     state: {
                         res: "fail"
@@ -122,4 +123,3 @@ function HomePage() {
 }
 
 export default HomePage;
-

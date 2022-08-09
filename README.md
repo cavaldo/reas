@@ -55,7 +55,3 @@ Na tobě je tedy vytvořit jednoduchou stránku, kde bude jen samotný formulá�
 
 Je důležité myslet na to, aby pro uživatele byl formulář dobře použitelný, proto se musí výběr kraje a okresu navrhnout tak, aby byl snadno použitelný. Jedním příkladem může být našeptávač nebo select s vyhledáváním.
 
-Na našem webu dříve fungovala tato mapka:
-
-Pokud si na to nevěříš, klidně to udělej po svém, podle chuti.![](Aspose.Words.14b0f65e-d67b-48b7-88c0-ebc8ef78827b.001.jpeg)
-

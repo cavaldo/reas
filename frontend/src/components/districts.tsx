@@ -51,4 +51,3 @@ function Districts({ region, district, setDistrict, setIsOpen }: Props) {
 }
 
 export default Districts;
-

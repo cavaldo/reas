@@ -13,5 +13,7 @@ export const Texts = {
     invalidPhone: "Zadané tel. číslo je v neplatném formátu.",
     long: "Maximální povolený počet znaků je ",
     required: "Toto pole je povinné.",
-    backToHome: "Zpět na formulář"
+    backToHome: "Zpět na formulář",
+    success: "Požadavek byl úspěšně odeslán.",
+    fail: "Oops, něco se pokazilo, prosím zkuste to za chvíli znovu."
 }
