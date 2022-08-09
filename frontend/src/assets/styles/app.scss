@@ -1,0 +1,159 @@
+$background-gray: #D7D9DF;
+$background-white: #FFFFFF;
+$text-gray: #87898C;
+$text-white: #FFFFFF;
+$text-red: #FE2424;
+$button-hover-gray: #BBBBBB;
+$button-blue: #1D5AFF;
+$button-hover-blue: #0045FF;
+
+$mid: 1000px;
+$small: 480px;
+
+body {
+    background-color: $background-gray;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navigation {
+    background-color: $background-white;
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin: -10px;
+    padding-right: 50px;
+
+    & > * {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+}
+
+.home {
+    background-color: $background-white;
+    margin: 50px auto;
+    position: relative;
+
+    & > * {
+        padding-left: 30px;
+    }
+
+    .form_heading {
+        padding-top: 30px;
+        margin-bottom: 0px;
+    }
+
+    .sub_heading {
+        color: $text-gray;
+        margin-bottom: 50px;
+    }
+
+    .client_info{
+        padding-left: 0px;
+
+    }
+}
+
+.client_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 650px;
+
+    @media(max-width: $mid) {
+        height: 780px;
+    }
+
+    & > input, label, select {
+        width: 250px;
+        padding: 5px;
+    }
+
+    & > input, select {
+        margin-bottom: 30px;
+    }
+
+    .button_wrapper {
+        width: 90%;
+        display: flex;
+        align-items: left;
+        margin: 30px 0px;
+    }
+
+    input, select {
+        border-radius: 5px;
+        height: 30px;
+    }
+
+    
+    label {
+        display: flex;
+        justify-content: space-between;
+        
+        span {
+            color: $text-red;
+        }   
+
+    }   
+}
+
+button, path, .pointer {
+    cursor: pointer;
+}
+
+.button_back {
+    border-style: none;
+    width: 150px;
+    border-radius: 15px;
+    padding: 15px 35px;
+
+    &:hover {
+        background-color: $button-hover-gray;
+    }
+}
+
+.submit_button {
+    background-color: $button-blue;
+    border-radius: 15px;
+    padding: 15px 25px;
+    border-style: none;
+    height: 40px;
+    color: $text-white;
+
+    &:hover {
+        background-color: $button-hover-blue;
+    }
+
+    &.pointer {
+        width: 150px;
+    }
+}
+
+.home, .client_info {
+    background-color: $background-white;
+    border-radius: 15px;
+    width: 900px;
+
+    @media(max-width: $mid) {
+        width: 550px;
+    }
+}
+
+.districts_select {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+    & > div {
+        width: 200px;
+        margin: 8px 0px;
+    }
+
+    .button_container {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+}
