@@ -7,8 +7,8 @@ $button-hover-gray: #BBBBBB;
 $button-blue: #1D5AFF;
 $button-hover-blue: #0045FF;
 
-$mid: 1000px;
-$small: 480px;
+$mid: 1024px;
+$small: 640px;
 
 body {
     background-color: $background-gray;
@@ -27,6 +27,12 @@ body {
         margin-top: 20px;
         margin-left: 20px;
     }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin-top: 0px;
+    }
 }
 
 .home {
@@ -36,6 +42,10 @@ body {
 
     & > * {
         padding-left: 30px;
+
+        @media (max-width: $small) {
+            padding-left: 15px;
+        }
     }
 
     .form_heading {
@@ -60,11 +70,7 @@ body {
     align-items: center;
     position: absolute;
     top: 0;
-    height: 650px;
-
-    @media(max-width: $mid) {
-        height: 780px;
-    }
+    height: 600px;
 
     & > input, label, select {
         width: 250px;
@@ -138,6 +144,10 @@ button, path, .pointer {
 
     @media(max-width: $mid) {
         width: 550px;
+    }
+
+    @media (max-width: $small) {
+        width: 300px;
     }
 }
 

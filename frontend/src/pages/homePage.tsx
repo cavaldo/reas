@@ -71,53 +71,55 @@ function HomePage() {
 
     return (
       <div className="home">
-            <h2 className="form_heading">{Texts.heading}</h2>
-            <p className="sub_heading">{Texts.sub}</p>
+        {!isOpen &&
+            <>
+                <h2 className="form_heading">{Texts.heading}</h2>
+                <p className="sub_heading">{Texts.sub}</p>
         
-            <Map callback={getRegion} />
+                <Map callback={getRegion} />
 
-            {region && <Districts region={region} district={district} setDistrict={setDistrict} setIsOpen={setIsOpen} />}
+                {region && <Districts region={region} district={district} setDistrict={setDistrict} setIsOpen={setIsOpen} />}
+            </>
+        }
 
-            {isOpen && 
-                <form className="client_info" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="button_wrapper">
-                        <button className="button_back" onClick={() => { reset(); setIsOpen(false); }}>{Texts.back}</button>
-                    </div>
-                    
-                    <label>{Texts.type}</label>
-                    <select {...register("type")}>
-                        <option value="byt">byt</option>
-                        <option value="dům">dům</option>
-                        <option value="pozemek">pozemek</option>
-                    </select>
-
-                    <label>{Texts.name} <span>*</span></label>
-                    <input {...register("name", {
-                            required: Texts.required,
-                            maxLength: {value: 30, message: Texts.long + "30."},
-                            pattern: {value: /^[a-zA-Z '-]*$/, message: Texts.invalidName}
-                        })} />
-                    {errors.name && <span>{errors.name.message}</span>}
-
-                    <label>{Texts.phone} <span>*</span></label>
-                    <input {...register("phone", {
-                            required: Texts.required,
-                            maxLength: {value: 16, message: Texts.long + "16."},
-                            pattern: {value: /^[0-9 +]+$/, message: Texts.invalidPhone}
-                        })} />
-                    {errors.phone && <span>{errors.phone.message}</span>}
-
-                    <label>{Texts.email} <span>*</span></label>
-                    <input {...register("email", {
-                            required: Texts.required, 
-                            maxLength: {value: 30, message: Texts.long + "30."},
-                            pattern: {value: /[a-zA-Z.]+@[a-zA-Z]+.[a-zA-Z]+$/, message: Texts.invalidEmail}
-                        })} />
-                    {errors.email && <span>{errors.email.message}</span>}
-                    
-                    <input className="pointer submit_button" type="submit" />
-                </form>
-            }
+        {isOpen && 
+            <form className="client_info" onSubmit={handleSubmit(onSubmit)}>
+                <div className="button_wrapper">
+                    <button className="button_back" onClick={() => { reset(); setIsOpen(false); }}>{Texts.back}</button>
+                </div>
+                
+                <label>{Texts.type}</label>
+                <select {...register("type")}>
+                    <option value="byt">byt</option>
+                    <option value="dům">dům</option>
+                    <option value="pozemek">pozemek</option>
+                </select>
+                <label>{Texts.name} <span>*</span></label>
+                <input {...register("name", {
+                        required: Texts.required,
+                        maxLength: {value: 30, message: Texts.long + "30."},
+                        pattern: {value: /^[a-zA-Z '-ěščřžýáíéůú]*$/, message: Texts.invalidName}
+                    })} />
+                {errors.name && <span>{errors.name.message}</span>}
+                <label>{Texts.phone} <span>*</span></label>
+                <input {...register("phone", {
+                        required: Texts.required,
+                        maxLength: {value: 16, message: Texts.long + "16."},
+                        pattern: {value: /^[0-9 +]+$/, message: Texts.invalidPhone}
+                    })} />
+                {errors.phone && <span>{errors.phone.message}</span>}
+                <label>{Texts.email} <span>*</span></label>
+                <input 
+                    {...register("email", {
+                        required: Texts.required, 
+                        maxLength: {value: 30, message: Texts.long + "30."},
+                        pattern: {value: /[a-zA-Z.]+@[a-zA-Z]+.[a-zA-Z]+$/, message: Texts.invalidEmail}
+                    })} />
+                {errors.email && <span>{errors.email.message}</span>}
+                
+                <input className="pointer submit_button" type="submit" />
+            </form>
+        }
       </div>
     );
 }
